@@ -1,0 +1,72 @@
+// 布局容器
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 var(--spacing-medium);
+  
+  @media (min-width: 768px) {
+    max-width: 720px;
+  }
+  
+  @media (min-width: 1024px) {
+    max-width: 960px;
+  }
+  
+  @media (min-width: 1280px) {
+    max-width: 1200px;
+  }
+}
+
+// 弹性布局工具类
+.flex {
+  display: flex;
+  
+  &-center {
+    justify-content: center;
+    align-items: center;
+  }
+  
+  &-column {
+    flex-direction: column;
+  }
+  
+  &-wrap {
+    flex-wrap: wrap;
+  }
+}
+
+// 间距工具类
+.spacing {
+  &-y {
+    > * + * {
+      margin-top: var(--spacing-medium);
+    }
+  }
+  
+  &-x {
+    > * + * {
+      margin-left: var(--spacing-medium);
+    }
+  }
+}
+
+// 响应式隐藏
+.hide {
+  &-mobile {
+    @media (max-width: 767px) {
+      display: none !important;
+    }
+  }
+  
+  &-tablet {
+    @media (min-width: 768px) and (max-width: 1023px) {
+      display: none !important;
+    }
+  }
+  
+  &-desktop {
+    @media (min-width: 1024px) {
+      display: none !important;
+    }
+  }
+} 
